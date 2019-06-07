@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+<title> Game</title>
+</head>
+<canvas id="ttt" style="border:10px solid black" height="700px" width="1500px">
+</canvas>
+<body>
+<script type="text/javascript">
+var canvas,context,posX=0;
+window.onload=function(){
+ canvas=document.getElementById("ttt");
+ alert(canvas);
+context=canvas.getContext("2d");
+alert(context);
+setInterval(update,1000/30);
+}
+
+function update()
+{posX++;
+context.fillStyle="yellow";
+context.fillRect(0,0,canvas.width,canvas.height); 
+context.beginPath();
+context.fillStyle="red";
+context.arc(posX,100,50,0,Math.PI*2);
+context.fill();
+if(posX>canvas.width)
+{posX=0;
+}
+}
+
+
+
+
+
+
+</script>
+</body>
+</html>
